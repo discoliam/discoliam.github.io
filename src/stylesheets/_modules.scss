@@ -1,0 +1,221 @@
+// Modules
+// Site wide modules. Components, sub navigation etc.
+
+// Site Title
+// ------------------------------------------------------------
+header{height: 70px;}
+
+h1{
+  font-size: 45px;
+  text-transform: uppercase;
+  font-family:"Blackout-TwoAM", sans-serif;
+  line-height: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+// Main Content
+// ------------------------------------------------------------
+#main-content{
+  margin:0 4%;
+  @extend %clearfix;
+  @include respond-min(1024px) {
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1024px;
+  }
+  h2{clear: both;}
+}
+
+// Blocks
+// ------------------------------------------------------------
+.block{
+  display: block;
+  margin-bottom: 4%;
+  text-align: center;
+  position: relative;
+  background-color: $light;
+
+  &.medium {@include large_block_size(48%); background-size: 80%;}
+  &.large {@include large_block_size(100%); background-color: $dark;}
+  &.large{background-size:cover;background-repeat:no-repeat;clear: both;}
+  &.small, &.medium {
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -1000em; 
+    float: left;
+    span{position: absolute;top: -20px;}
+  }
+
+  // Overlay
+  .overlay{
+    display: block;
+    opacity: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: rgba(#000, 0.75) url("iconmonstr-link-icon.svg") no-repeat center center;
+    background-size: 40%;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+  }
+
+  // Text Blocks 
+  &.text{
+    text-align: left;
+    box-sizing: border-box;
+    padding: 4% 4% 0 4%;
+    @include respond-min(768px) {
+      padding: 4% 8% 0 8%;
+    }
+    @extend %clearfix;
+  }
+
+  &.bio .email{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 3%;
+  }
+
+  // &.cv, &.contact{
+  //   @include respond-min(768px) {
+  //     height: 174px;
+  //     float: left;
+  //     margin-right: 4%;
+  //     width: 48%;
+  //   }
+  // }
+
+  &.contact {
+    p.fn {
+      font-size: 20px;
+      margin-bottom: 8%;
+      span{font-size: 14px;color: $light-contrast;}
+    }
+    @include respond-min(768px) {
+      p{width: 50%;float: left;margin-bottom: 4% !important;padding-bottom: 0;}
+    }
+  }
+
+
+  // Project Block
+  &.large {
+    color: $light;
+    span{display: block;}
+    .title{
+      font-size: 40px;
+      font-family: 'JeanLucWeb-Thin', Arial, "Helvetica Neue", Helvetica, sans-serif;
+      position: absolute;
+      top: 50%;
+      @include transform(translateY(-50%));
+      line-height: 0.9;
+      width: 100%;
+      z-index: 1;
+      letter-spacing: 5px;
+    }
+    .desc{
+      font-size: 15px;
+      font-weight: 700;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    &:hover{color: $bg;}
+
+    @include respond-min(768px) {
+      @include large_block_size(48%);
+      clear: none;
+      float: left;
+      margin-right: 4%;
+      &:nth-child(2n+0){margin-right: 0;}
+    }
+    
+  }
+
+  // Social Blocks
+  &.twitter{background-color: $twitter; background-image: url("iconmonstr-twitter-icon.svg");}
+  &.github{background-color: $github; background-image: url("iconmonstr-github-6-icon.svg");}
+  &.instagram{background-color: $instagram; background-image: url("iconmonstr-instagram-6-icon.svg");}
+  &.lastfm{background-color: $lastfm; background-image: url("iconmonstr-last-fm-icon.svg");}
+  &.facebook{background-color: $facebook; background-image: url("iconmonstr-facebook-icon.svg");}
+  &.linkedin{background-color: $linkedin; background-image: url("iconmonstr-linkedin-icon.svg");}
+  &.skype{background-color: $skype; background-image: url("iconmonstr-skype-icon.svg");}
+  &.stackoverflow{background-color: $stackoverflow; background-image: url("iconmonstr-stackoverflow-icon.svg");}
+
+} // eo:block
+
+
+.clients-wrap .block.medium{
+  margin-right: 4%;
+  &:nth-child(2n+0){margin-right: 0;}
+  @include respond-min(768px) {
+    @include large_block_size(22%);
+    &:nth-child(2n+0){margin-right: 4%;}
+    &:nth-child(4n+0){margin-right: 0;}
+  }
+}
+
+.block.small{
+  background-size: 60%;
+  margin-right: 4%;
+  @include large_block_size(22%);
+  &:nth-child(4n+0){margin-right: 0;}
+  
+  @include respond-min(768px) {
+    @include large_block_size(9%);
+    &:nth-child(4n+0){margin-right: 4%;}
+    &:last-child{margin-right: 0;}
+  }
+}
+
+// Block Hover State
+a.block:hover .overlay{opacity: 1;}
+
+// Block Projects 
+.block.bath-ruby{background-image: url("bath-ruby-bg.jpg");}
+.block.aperyer{background-image: url("aperyer-bg.jpg");}
+.block.closed-sundays{background-image: url("closed-sundays-bg.jpg");}
+.block.toucan-box{background-image: url("toucan-box-bg.jpg"); color:$dark;&:hover{color: $dark;}}
+.block.moustache-booth{background-image: url("moustache-booth-bg.jpg");}
+.block.brizzle-ipsum{background-image: url("brizzle-ipsum-bg.jpg");}
+
+
+
+// Block (Clients BG's)
+// ------------------------------------------------------------
+.block.medium {
+  &.puffin{background-color: $puffin; background-image: url("puffin.png"); background-size: 50%;}
+  &.audi{background-color: $audi;  background-image: url("audi.png");}
+  &.sky{background-color: $sky;  background-image: url("logo-sky.png");}
+  &.good-energy{background-color: $good-energy; background-image: url("logo-good-energy.png");}
+  &.transparency{background-color: $transparency; background-image: url("logo-trans.png");}
+  &.bdh{background-color: $bdh; background-image: url("logo-bdh.png");}
+  &.work-the-world{background-color: $work-the-world;background-image: url("logo-work-the-world.png");}
+  &.rau{background-color: $rau; background-image: url("logo-rau.png");}
+}
+
+.clients-wrap,
+.projects-wrap {
+  @extend %clearfix;
+}
+
+
+
+// Footer 
+// ------------------------------------------------------------
+footer{
+  clear: both;
+  display: block;
+  text-align: center;
+  padding: 4% 0;
+  font-size: 11px;
+  p.copy span{color: $light-contrast;}
+}

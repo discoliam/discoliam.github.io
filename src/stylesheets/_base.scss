@@ -1,0 +1,41 @@
+// Base
+// Base styles for HTML elements. No class's or IDs should be used here.
+
+// Body
+// ------------------------------------------------------------
+
+body {
+  color: $dark;
+  background: $bg url(bg.jpg) no-repeat top right fixed;
+  background-size: 800px;
+  font-family: "Karla",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+// Headings
+// ------------------------------------------------------------
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0 0 4% 0;
+}
+
+// Links
+// ------------------------------------------------------------
+a {
+  color: $main;
+  text-decoration: none;
+  @include transition(color, 0.2s, linear);
+  cursor: pointer;
+  &:hover{ color: $contrast;}
+}
+
+a img {border: none;}
+
+// Table
+// ------------------------------------------------------------
+table { border-collapse: collapse; }
+
+h2{
+  font-family: "JeanLucWeb-Thin", sans-serif;
+  font-size: 40px;
+}

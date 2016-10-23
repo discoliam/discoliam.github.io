@@ -1,0 +1,9 @@
+// This is a manifest file that'll be compiled into application.css, which will include all the files listed below.
+
+// Base Files
+@import "normalize"; // Normalize the Browsers 
+@import "settings"; // Variables, Mixins, Placeholders etc
+@import "typography"; // Basic site typography 
+@import "base"; // Basic element styles
+@import "site-layout"; // Basic element styles
+@import "modules"; // Site wide modules

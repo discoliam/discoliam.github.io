@@ -1,0 +1,49 @@
+// Typography
+// Font families, base sizes and styles for the site.
+
+// Font Face
+// ------------------------------------------------------------
+@font-face {
+  font-family: 'JeanLucWeb-Thin';
+  src: url('jeanlucweb-thin.eot');
+  src: local('☺'), url("jeanlucweb-thin.woff") format("woff"),
+                   url("jeanlucweb-thin.otf") format("opentype"),
+                   url("jeanlucweb-thin#webfontdsa4toug") format("svg");
+}
+
+@font-face {
+  font-family: 'Blackout-TwoAM';
+  src: url('blackout_two_am-webfont.eot');
+  src: local('☺'), url("blackout_two_am-webfont.woff") format("woff"),
+                   url("blackout_two_am-webfont.otf") format("opentype"),
+                   url("blackout_two_am-webfont.svg") format("svg");
+}
+
+// Font Size
+// ------------------------------------------------------------
+
+ 
+// Font Styling
+// ------------------------------------------------------------ 
+
+// Bold
+// {font-weight: bold;}
+
+// Italic
+//{font-style: italic;}
+
+// Underline
+//{text-decoration: underline;}
+
+// Normal
+//{font-weight: normal !important; font-style: normal !important;}
+//{font-weight: normal !important;}
+//{font-style: normal !important;}
+
+// Text Transform
+//{text-transform: uppercase;}
+//{text-transform: none;}
+
+// Line Height 
+
+// Letter spacing 

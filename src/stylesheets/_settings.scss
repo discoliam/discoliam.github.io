@@ -1,0 +1,144 @@
+/* Settings */
+/* This is where all vars and mixins are stored for use in all other style sheets */
+
+// Vars
+// ------------------------------------------------------------
+
+/* Colours */
+$light:#fff;               // White
+$dark:#333;                // Dark Gray
+
+$main:#f38430;             // Orange
+$bg: #f4f5ec;              // Beige
+$cv: #8a6eaf;              // Purple
+$contrast: #19e3bd;        // Turquoise
+$light-contrast: #c3c4b8;  //light Beige / grey
+
+$main-transparent: rgba(255, 108, 0, 0.8);
+
+// Social Colours
+$twitter: #55acee;
+$github: #4183c4;
+$instagram: #3f729b;
+$lastfm: #d12127;
+$facebook: #3b5998;
+$linkedin: #006699;
+$skype: #00aff0;
+$stackoverflow: #fe7a15;
+
+//Client Colours
+$good-energy: #f5c800;
+$gap-medics: #2d2d2d;
+$work-the-world: #004892;
+$bdh: #192123;
+$rau: #000;
+$puffin: #f9df28;
+$transparency: #3898ec;
+$market-watch: #3c3c3b;
+$twc: #fff;
+$kia: #ca0020;
+$scouts: #4d2177;
+$onezeroone: #00abbd;
+$the-adventurists: #f00000;
+$audi: #cc2036;
+$sky: #0070a5;
+
+
+/* Base Font Size */
+$basefont: 16;
+
+// Mixins
+// ------------------------------------------------------------
+
+@mixin list_style_none {
+  background: none;
+  padding-left: 0;
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin font_size($size) {
+  font-size: $size + px;
+  font-size: ($size/$basefont) + 0rem;
+}
+
+@mixin block_size($size) {
+  width: $size;
+  height: $size ;
+}
+
+@mixin large_block_size($size) {
+  width: $size;
+  height: 0;
+  padding-bottom: $size;
+}
+
+@mixin transform($params) {
+  -webkit-transform: $params;
+  -moz-transform:    $params;
+  transform:         $params;
+}
+
+
+// Media Query Setup
+$fix-mqs: false !default;
+
+@mixin respond-min($width) {
+  @if $fix-mqs {
+    @if $fix-mqs >= $width {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+
+
+// Placeholders
+// ------------------------------------------------------------
+
+@mixin image-replacement {
+   overflow: hidden;
+   text-align: left;
+   display: block;
+   line-height:0;
+   text-indent: -1000em;
+}
+
+%clearfix {
+   &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+}
+
+%image-replacement {
+   overflow: hidden;
+   text-align: left;
+   display: block;
+   line-height:0;
+   text-indent: -1000em;
+}
+
+// Helper Classes
+// ------------------------------------------------------------
+.hidden{display: none;}
